@@ -1,0 +1,71 @@
+{
+  "name": "@typed/sequence",
+  "version": "0.0.0",
+  "description": "Run things in sequence",
+  "main": "lib/commonjs",
+  "typings": "lib/es2015/index.d.ts",
+  "jsnext:main": "lib/es2015/index.js",
+  "module": "lib/es2015/index.js",
+  "scripts": {
+    "build": "npm run clean && npm run build:es2015 && npm run build:commonjs",
+    "build:commonjs": "tsc -P .config/tsconfig.commonjs.json",
+    "build:es2015": "tsc -P .config/tsconfig.es2015.json",
+    "changelog": "conventional-changelog --infile CHANGELOG.md --same-file --release-count 0 --preset angular",
+    "clean": "rimraf lib lib.es2015",
+    "commit": "git-cz",
+    "postchangelog": "git add CHANGELOG.md && git commit -m 'docs(CHANGELOG): append to changelog'",
+    "postversion": "npm run changelog && git push origin master --tags && npm publish --access=public",
+    "preversion": "npm run build",
+    "release:minor": "npm version minor -m 'chore(package): v%s'",
+    "release:major": "npm version major -m 'chore(package): v%s'",
+    "test": "npm run test:lint && npm run test:unit",
+    "test:lint": "tslint src/**/*.ts src/*.ts",
+    "test:unit": "mocha -r ts-node/register src/*.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TylorS/typed-sequence.git"
+  },
+  "keywords": [
+    "typescript",
+    "promise",
+    "observable",
+    "stream"
+  ],
+  "author": "Tylor Steinberger <tlsteinberger167@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TylorS/typed-sequence/issues"
+  },
+  "homepage": "https://github.com/TylorS/typed-sequence#readme",
+  "devDependencies": {
+    "@motorcycle/tslint": "^1.2.0",
+    "@types/mocha": "^2.2.34",
+    "@types/node": "^6.0.52",
+    "commitizen": "^2.9.2",
+    "conventional-changelog-cli": "^1.2.0",
+    "cz-conventional-changelog": "^1.2.0",
+    "ghooks": "^2.0.0",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-sauce-launcher": "^1.1.0",
+    "karma-typescript": "^2.1.5",
+    "mocha": "^3.2.0",
+    "most": "^1.1.1",
+    "phantomjs-prebuilt": "^2.1.14",
+    "rimraf": "^2.5.4",
+    "ts-node": "^1.7.2",
+    "tslint": "^4.1.1",
+    "typescript": "^2.1.4",
+    "validate-commit-msg": "^2.8.2",
+    "wallabify": "0.0.14"
+  },
+  "config": {
+    "ghooks": {
+      "commit-msg": "node ./node_modules/.bin/validate-commit-msg"
+    }
+  }
+}
