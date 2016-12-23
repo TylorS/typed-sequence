@@ -1,6 +1,6 @@
 {
   "name": "@typed/sequence",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Run things in sequence",
   "main": "lib/commonjs",
   "typings": "lib/es2015/index.d.ts",
