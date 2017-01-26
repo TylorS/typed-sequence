@@ -1,5 +1,7 @@
 # @typed/sequence
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/TylorS/typed-sequence.svg)](https://greenkeeper.io/)
+
 > Create sequential code easily
 
 Helps you create a sequence of execution.
