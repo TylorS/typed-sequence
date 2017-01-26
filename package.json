@@ -41,7 +41,7 @@
   "devDependencies": {
     "@motorcycle/tslint": "^1.2.0",
     "@types/mocha": "^2.2.34",
-    "@types/node": "^6.0.52",
+    "@types/node": "^7.0.4",
     "commitizen": "^2.9.2",
     "conventional-changelog-cli": "^1.2.0",
     "cz-conventional-changelog": "^1.2.0",
@@ -57,7 +57,7 @@
     "most": "^1.1.1",
     "phantomjs-prebuilt": "^2.1.14",
     "rimraf": "^2.5.4",
-    "ts-node": "^1.7.2",
+    "ts-node": "^2.0.0",
     "tslint": "^4.1.1",
     "typescript": "^2.1.4",
     "validate-commit-msg": "^2.8.2",
